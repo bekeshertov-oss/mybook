@@ -1,7 +1,7 @@
 {
   "name": "Книга Мудрых",
   "short_name": "Мудрость",
-  "start_url": "/",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#FDF5E6",
   "theme_color": "#FDF5E6",
