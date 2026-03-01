@@ -1,75 +1,58 @@
-/* Базовые стили для темной темы */
+/* Черный фон сайта, как на ваших скриншотах */
 body {
-    background-color: #000000;
+    background-color: #000000; 
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    color: #ffffff; /* Весь текст по умолчанию белый */
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-}
-
-/* Исправление для русского текста */
+/* Исправление выравнивания для русского языка */
 .ru-text {
-    direction: ltr !important;
-    text-align: left !important;
-    unicode-bidi: isolate;
+    direction: ltr !important;    /* Слева направо */
+    text-align: left !important;   /* Прижать к левому краю */
+    unicode-bidi: isolate;         /* Чтобы знаки препинания не прыгали */
+    display: block;
 }
 
-/* Цвет заголовков (теперь белый) */
+/* Заголовки (теперь они БЕЛЫЕ и их видно) */
 h1, h2, h3 {
     color: #ffffff !important;
 }
 
-/* Карточки */
+/* Красные карточки */
 .card-red {
     background-color: #8B0000;
-    color: white;
+    color: #ffffff;
     padding: 15px;
     border-radius: 10px;
-    margin: 10px 0;
+    margin: 10px auto;
     width: 90%;
 }
 
+/* Белые карточки (текст внутри них черный) */
 .card-white {
     background-color: #ffffff;
-    color: #000000;
+    color: #000000 !important;
     padding: 15px;
     border-radius: 10px;
-    margin: 10px 0;
+    margin: 10px auto;
     width: 90%;
 }
 
-/* Меню */
+/* Синие кнопки меню */
 .menu {
     display: flex;
+    justify-content: center;
     gap: 10px;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .menu-btn {
-    background-color: #1E90FF;
-    color: white;
-    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff !important;
+    padding: 10px 15px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-weight: bold;
-}
-
-/* Изображения */
-.my-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.footer-text {
-    color: #ffffff;
-    text-align: center;
-    font-size: 12px;
-    margin-top: 20px;
 }
