@@ -1,7 +1,7 @@
 {
   "name": "BraslavSea",
   "short_name": "BraslavSea",
-  "start_url": "/",
+  "start_url": "/mybook/index.html",
   "display": "standalone",
   "background_color": "#FDF5E6",
   "theme_color": "#FDF5E6",
