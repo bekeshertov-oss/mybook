@@ -1,33 +1,50 @@
+/* Базовые настройки страницы */
 body {
     background-color: #000000 !important;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    color: #ffffff;
 }
 
-/* Это правило прижмет русский текст влево и вернет смайлики на место */
+/* ГЛАВНОЕ: Исправление для русского текста и смайликов */
 .ru-text {
     direction: ltr !important;
     text-align: left !important;
-    unicode-bidi: isolate !important;
+    /* Это свойство заставляет точку и смайлик стоять в конце строки слева */
+    unicode-bidi: plaintext !important; 
     display: block;
+    width: 100%;
 }
 
-/* Делаем заголовок БЕЛЫМ */
-h1 {
+/* Заголовок H1 (белый и по центру) */
+h1.ru-text {
     color: #ffffff !important;
-    text-align: center;
+    text-align: center !important;
+    margin: 20px 0;
+    font-size: 24px;
 }
 
+/* Контейнер для центрирования всего содержимого */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Красные карточки (Шапка и Иврит) */
 .card-red {
     background-color: #8B0000;
-    color: white;
+    color: #ffffff;
     padding: 15px;
     border-radius: 10px;
     margin: 10px auto;
     width: 90%;
+    box-sizing: border-box;
 }
 
+/* Белые карточки (Русский текст) */
 .card-white {
     background-color: #ffffff;
     color: #000000 !important;
@@ -35,20 +52,32 @@ h1 {
     border-radius: 10px;
     margin: 10px auto;
     width: 90%;
+    box-sizing: border-box;
 }
 
+/* Кнопки меню */
 .menu {
     display: flex;
     justify-content: center;
     gap: 10px;
     margin: 20px 0;
+    flex-wrap: wrap;
 }
 
 .menu-btn {
     background-color: #007bff;
-    color: white !important;
+    color: #ffffff !important;
     padding: 10px 15px;
     text-decoration: none;
     border-radius: 8px;
     font-weight: bold;
+    text-align: center;
+}
+
+/* Изображения */
+img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    margin: 10px 0;
 }
