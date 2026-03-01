@@ -1,18 +1,20 @@
-/* База */
+/* ===== БАЗА ===== */
 body {
-    background-color: #000000 !important;
+    background-color: #000000;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
     color: #ffffff;
 }
 
-/* Контейнеры */
+/* ===== КОНТЕЙНЕР ===== */
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    max-width: 700px;      /* аккуратная ширина на больших экранах */
+    margin: 0 auto;
 }
 
 main {
@@ -22,20 +24,15 @@ main {
     align-items: center;
 }
 
-/* Русский текст: Равномерно заполняет ширину, смайлики слева */
+/* ===== ТЕКСТ ===== */
 .ru-text {
-    text-align: justify !important; 
-    direction: ltr !important;
-    unicode-bidi: plaintext !important; 
-    display: block;
+    text-align: justify;
     width: 100%;
-    box-sizing: border-box;
 }
 
-/* Заголовок и подзаголовок */
+/* Заголовки */
 h1.ru-text {
-    color: #ffffff !important;
-    text-align: center !important;
+    text-align: center;
     margin: 20px 0;
     font-size: 24px;
 }
@@ -43,31 +40,28 @@ h1.ru-text {
 header h3 {
     margin: 0;
     text-align: center;
-    color: #ffffff;
 }
 
-/* Карточки */
-.card-white {
-    background-color: #ffffff !important;
-    color: #000000 !important;
+/* ===== КАРТОЧКИ ===== */
+.card {
     padding: 15px;
     border-radius: 10px;
     margin: 10px auto;
     width: 90%;
     box-sizing: border-box;
+}
+
+.card-white {
+    background-color: #ffffff;
+    color: #000000;
 }
 
 .card-red {
-    background-color: #8B0000 !important;
-    color: #ffffff !important;
-    padding: 15px;
-    border-radius: 10px;
-    margin: 10px auto;
-    width: 90%;
-    box-sizing: border-box;
+    background-color: #8B0000;
+    color: #ffffff;
 }
 
-/* Меню */
+/* ===== МЕНЮ ===== */
 .menu {
     display: flex;
     justify-content: center;
@@ -77,17 +71,27 @@ header h3 {
 
 .menu-btn {
     background-color: #007bff;
-    color: #ffffff !important;
+    color: #ffffff;
     padding: 10px 15px;
     text-decoration: none;
     border-radius: 8px;
     font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-/* Изображения */
+.menu-btn:hover {
+    background-color: #0056b3;
+}
+
+.menu-btn:active {
+    transform: scale(0.97);
+}
+
+/* ===== ИЗОБРАЖЕНИЯ ===== */
 img {
     max-width: 90%;
     height: auto;
     border-radius: 10px;
     margin: 10px 0;
+    display: block;
 }
