@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BraslavSea</title>
+<meta name="description" content="Учение рабби Нахмана">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#b30000">
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="card-red ru-text">
+            <h3>Отправить сообщение</h3>
+            <p>Всегда рады вашим письмам</p>
+        </header>
+
+        <nav class="menu">
+            <a href="./index.html" class="menu-btn">Home</a>
+            <a href="./tema.html" class="menu-btn">Темы</a>
+            <a href="./cont.html" class="menu-btn">Связь</a>
+        </nav>
+
+        <main>
+<h1 dir="ltr" style="text-align: center; color: #ffffff; width: 100%; margin: 20px 0;">
+            Содержание - темы</h1>
+
+            <img src="./1.png" class="my-image" alt="BraslavSea">
+
+            <div class="card-white ru-text">
+                <p dir="ltr" style="text-align: justify; unicode-bidi: plaintext; margin: 0;">
+                    
+              <form action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="06e4aacb-6a76-4140-ab18-76fce9e31f17">
+  <input type="text" name="name" required>
+  <input type="email" name="email" required>
+  <textarea name="message" required></textarea>
+  <button type="submit">Submit</button>
+</form>
+              
+                    <a href="https://t.me/braslavsea" target="_blank" rel="noopener">
+                        https://t.me/braslavsea</a>
+                </p>
+            </div>
+
+          
+
+            
+            
+
+               <div class="card-red" dir="rtl">
+              Поделись с друзьями ссылкой, чтобы они тоже могли установить себе на телефон наше мини-приложение. Открыть нужно в Хром. Если через несколько 
+                   секунд ничего не проиходит, то кликаем на три точки вверху и выбираем "Установить как приложение". 
+                   <a href="https://bekeshertov-oss.github.io/mybook/">https://bekeshertov-oss.github.io/mybook/</a>
+            </div>
+            
+
+        </main>
+
+    </div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js', { scope: '/mybook/' })
+                .then(() => console.log('Service Worker зарегистрирован'))
+                .catch(error => console.log('Ошибка регистрации:', error));
+        }
+    </script>
+
+const form = document.getElementById('form');
+const submitBtn = form.querySelector('button[type="submit"]');
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    formData.append("access_key", "06e4aacb-6a76-4140-ab18-76fce9e31f17");
+
+    const originalText = submitBtn.textContent;
+
+    submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
+
+    try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            alert("Success! Your message has been sent.");
+            form.reset();
+        } else {
+            alert("Error: " + data.message);
+        }
+
+    } catch (error) {
+        alert("Something went wrong. Please try again.");
+    } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }
+});
+
+
+
+
+import { useState } from 'react';
+
+export default function ContactForm() {
+  const [result, setResult] = useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    formData.append("access_key", "06e4aacb-6a76-4140-ab18-76fce9e31f17");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+    setResult(data.success ? "Success!" : "Error");
+  };
+
+  return (
+    <form onSubmit={onSubmit}>
+      <input type="text" name="name" required/>
+      <input type="email" name="email" required/>
+      <textarea name="message" required></textarea>
+      <button type="submit">Submit</button>
+      <p>{result}</p>
+    </form>
+  );
+}
+
+
+
+</body>
+</html>
