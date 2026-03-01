@@ -1,0 +1,93 @@
+/* 1. Основные настройки фона и шрифта */
+body {
+    font-family: 'Roboto', 'Verdana', sans-serif;
+    line-height: 1.6;
+    background-color: #000000;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    /* Убеждаемся, что всё выравнивается по правому краю для иврита */
+    direction: rtl; 
+}
+
+/* 2. Контейнер, который заменяет тег <center> */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 3. Красные блоки (Шапка и Цитаты) */
+.card-red {
+    background-color: #8B0000;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+    border: 1px solid #B3E5FC;
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+}
+
+/* 4. Белый блок с текстом */
+.card-white {
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    border: 1px solid #B3E5FC;
+    width: 100%;
+    max-width: 360px;
+    text-align: justify; /* Текст распределяется красиво */
+}
+
+/* 5. Навигационное меню */
+.menu {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.menu-btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.menu-btn:hover {
+    background: #0056b3;
+    transform: scale(1.05); /* Легкий эффект увеличения при наведении */
+}
+
+/* 6. Настройки картинки */
+.my-image {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* 7. Текст внизу (футер) */
+.footer-text {
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 40px;
+    padding: 20px;
+    max-width: 400px;
+}
+
+.footer-text a {
+    color: #B3E5FC;
+    word-wrap: break-word;
+}

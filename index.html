@@ -1,142 +1,61 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="he" dir="rtl">
 <head>
-<link rel="manifest" href="manifest.json">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<style>
-.menu {
-  display: flex;          /* Выстраивает кнопки в ряд */
-  gap: 10px;              /* Расстояние между кнопками */
-}
-
-.menu-btn {
-  text-decoration: none;  /* Убирает подчеркивание */
-  padding: 10px 20px;     /* Внутренние отступы */
-  background: #007bff;    /* Цвет кнопки */
-  color: white;           /* Цвет текста */
-  border-radius: 5px;     /* Скругление углов */
-  transition: 0.3s;       /* Плавность при наведении */
-}
-
-.menu-btn:hover {
-  background: #0056b3;    /* Цвет при наведении */
-}
-  .my-image {
-    display: block;      /* Убираем float, делаем картинку блоком */
-    margin-left: auto;   /* Выравнивание по центру */
-    margin-right: auto;  /* Выравнивание по центру */
-    margin-bottom: 10px; /* Отступ снизу до текста */
-    margin-top: 10px;    /* Отступ сверху */
-    width: 320px; 
-  }
- body {
-      font-family: 'Roboto', sans-serif;
-      line-height: 1.6; /* Межстрочный интервал для красоты */
-      padding: 20px;
-    }
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>שיגור הובלות</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
+<body>
 
+    <div class="container">
 
-<body bgcolor="#F0F8FF">
+        <header class="card-red">
+            <h3>שיגור הובלות</h3>
+            <p>הובלות קטנות וקווי חלוקה</p>
+        </header>
 
-<table width="95%" align="center">
-  <tr>
-    <td>
-     
-     <font face="Verdana">
-     
-     <div style="background-color: #FFA07A; padding: 20px; text-align: center; 
-        margin: 20px; border-radius: 15px; border: 1px solid #B3E5FC;">
-     
-        <h3 style="margin: 0; color: #1A237E;">Добро пожаловать!</h3>
-        <p style="margin-top: 10px;">Вы установили мини-приложение @BraslavSea - 26/02/26 </p>
+        <nav class="menu">
+            <a href="index.html" class="menu-btn">בית</a>
+            <a href="tema.html" class="menu-btn">מחירים</a>
+            <a href="#" class="menu-btn">צור קשר</a>
+        </nav>
+
+        <main style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <h1>אחריות - מהירות - שירות אישי</h1>
+            <p style="text-align: center; color: #ffffff;">תודה שהתקנתה שיגור לטלפון שלך. מעכשיו תמיד תהיה מעודכן</p>
+
+            <img src="shigur.jpg" class="my-image" alt="Shigur">
+
+            <div class="card-white">
+                <p>למה זכינו להיות במקום הראשון? בזכות השירות האדיב, האמינות והפריסה הרחבה, המקנים ללקוחותינו את השירות האיכותי ביותר במחיר הנמוך ביותר בישראל. מדברים גם ביידיש! שומרים שבת ו עושים הכל עם הלב</p>
+            </div>
+
+            <h3 style="color: #ffffff; text-align: center;">קצת חיזוקים מצדיקי הדורות</h3>
+
+            <div class="card-red">
+                דַּע כִּי יֵשׁ יִרְאוֹת נְפוּלוֹת וְכָל הַיִּסּוּרִים וְהַדִּינִים שֶׁיֵּשׁ לָאָדָם כֻּלָּם הֵם מֵהַיִּרְאוֹת הַנְּפוּלוֹת שֶׁנָּפְלוּ לְתוֹך זֶה הַדָּבָר שֶׁהוּא מִתְפַּחֵד וְיֵשׁ לוֹ יִסּוּרִים מִמֶּנּוּ
+            </div>
+        </main>
+
+        <footer class="footer-text">
+            <p>לינק להתקנה בטלפון - מיני אפליקציה שלנו בשתי קליקים. לפתוח בדפדפן חרום ולהמתין כמה שניות. אם אין שינוי לחץ על שלוש נקודות למעלה ובחר להתקין אפליקציה</p>
+            <a href="https://bekeshertov-oss.github.io/shigur/">https://bekeshertov-oss.github.io/shigur/</a>
+        </footer>
+
     </div>
-     
-     <nav class="menu">
-  <a href="index.html" class="menu-btn">Главная</a>
-  <a href="tema.html" class="menu-btn">Темы</a>
-  <a href="#" class="menu-btn">Контакты</a>
-</nav>
-     
-     <h1 style="text-align: center;">Внутренние качества - азут</h1>
-<h3 style="text-align: center;">Две противоположности</h3>
 
-
-<br>
-<img src="nauka1.jpg" class="my-image" alt="">
-<br>
-
-
-    <div style="background-color: #FFFFFF; padding: 20px; 
-        margin: 20px; border-radius: 5px; border: 1px solid #B3E5FC;">
-<p>
- Внутренние качества - "азут"
-Есть два вида "азут": 1. наглость (тёмная сторона) 2. упорство, настойчивость (светлая сторона). Полностью исправляя себя, человек избавляется от тёмного "азут", которое еще называют "азут паним". 
-https://t.me/braslavsea <br>
-צָרִיך לְפַלֵּס דְּרָכָיו אֵיך לְהִתְנַהֵג עִם הָעַזּוּת לִבְלִי לִהְיוֹת, חַס וְשָׁלוֹם, עַזּוּת פָּנִים, כִּי הִיא מִדָּה רָעָה מְאד..
-</div>
-
-
-
-
-
-
-<h3 style="text-align: center;">Знакомтесь c учением рабби Нахмана на нашем канале</h3>
-
- <div style="background-color: #FFFFFF; padding: 20px; 
-        margin: 20px; border-radius: 5px; border: 1px solid #B3E5FC;">
-
- - Почему сказано: «Суди о другом так, чтобы перевесила чаша заслуг»? Можно ведь заменить слово «суди» на другое. 
- <br>
- - Что нужно перевернуть в Пурим?
- <br>
- - Что такое настоящий "лишма"?
-<br></div>
-
-
-
-<h3 style="text-align: center;">Лучшее время для уединения и молитвы</h3>
-
-
-<div style="background-color: #FFFFFF; padding: 20px; 
-        margin: 20px; border-radius: 5px; border: 1px solid #B3E5FC;">
-Полночь согласно каббале начинается после шести часов от выхода звезд. Продолжается "эт рацон" (время открытых "дверей") два часа - до конца второй небесной стражи. Всем приятного "итбодэдут"! 🙂 </div>
-<br>
-<div style="
-        background-color: #FFA07A; 
-        padding: 40px; 
-        text-align: center; 
-        margin: 20px; 
-        border-radius: 15px; 
-        border: 1px solid #B3E5FC;
-    ">
-עִקַּר חֲצוֹת הוּא תָּמִיד אַחַר שִׁשּׁה שָׁעוֹת מִתְּחִלַּת הַלַּיְלָה הֵן בַּקַּיִץ וְהֵן בַּחֹרֶף וְאָז מַתְחִיל זְמַן חֲצוֹת וְנִמְשָׁך עַד גְּמַר אַשְׁמוּרָה שְׁנִיָּה דְּהַיְנוּ שְׁתֵּי שָׁעוֹת
-   </div>  <br>
-   
-  
-     
-     
-     
-     
-     <br>Ссылка для установки через Хром для ваших друзей и знакомых
-<a href="https://bekeshertov-oss.github.io/mybook/">https://bekeshertov-oss.github.io/mybook/</a> -
-(три точки + установить приложение) 
-<br><br><br><br>
-     
-     </font>
-    </td>
-  </tr>
-</table>
-
-
-
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+      }
+    </script>
 
 </body>
 </html>
-                    

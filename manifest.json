@@ -1,11 +1,17 @@
 {
-  "name": "Книга Мудрых",
-  "short_name": "Мудрость",
-  "start_url": "index.html",
+  "name": "Shigur hovalot",
+  "short_name": "Shigur",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#FDF5E6",
   "theme_color": "#FDF5E6",
   "icons": [
+  
+  {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
     {
       "src": "icon.png",
       "sizes": "512x512",
