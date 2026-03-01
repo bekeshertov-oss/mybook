@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BraslavSea</title>
+<meta name="description" content="Учение рабби Нахмана">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#b30000">
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="card-red ru-text">
+            <h3>Книга "Ликутей Моаран"</h3>
+            <p>Учи с нами книги рабби Нахмана</p>
+        </header>
+
+        <nav class="menu">
+            <a href="./index.html" class="menu-btn">Home</a>
+            <a href="./tema.html" class="menu-btn">Темы</a>
+            <a href="./cont.html" class="menu-btn">Связь</a>
+        </nav>
+
+        <main>
+<h1 dir="ltr" style="text-align: center; color: #ffffff; width: 100%; margin: 20px 0;">
+            Содержание - темы</h1>
+
+            <img src="./1.png" class="my-image" alt="BraslavSea">
+
+            <div class="card-white ru-text">
+                <p dir="ltr" style="text-align: justify; unicode-bidi: plaintext; margin: 0;">
+                    
+               <ol>
+       <li>Первая глава</li>
+       <li>Вторая глава</li>
+       <li>Третья глава</li>
+</ol>
+              
+                    <a href="https://t.me/braslavsea" target="_blank" rel="noopener">
+                        https://t.me/braslavsea</a>
+                </p>
+            </div>
+
+          
+
+            
+            
+
+               <div class="card-red" dir="rtl">
+              Поделись с друзьями ссылкой, чтобы они тоже могли установить себе на телефон наше мини-приложение. Открыть нужно в Хром. Если через несколько 
+                   секунд ничего не проиходит, то кликаем на три точки вверху и выбираем "Установить как приложение". 
+                   <a href="https://bekeshertov-oss.github.io/mybook/">https://bekeshertov-oss.github.io/mybook/</a>
+            </div>
+            
+
+        </main>
+
+    </div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js', { scope: '/mybook/' })
+                .then(() => console.log('Service Worker зарегистрирован'))
+                .catch(error => console.log('Ошибка регистрации:', error));
+        }
+    </script>
+
+</body>
+</html>
