@@ -1,4 +1,4 @@
-/* Базовые настройки: фон сайта черный */
+/* База */
 body {
     background-color: #000000 !important;
     margin: 0;
@@ -7,7 +7,7 @@ body {
     color: #ffffff;
 }
 
-/* Контейнер для центрирования карточек на экране */
+/* Контейнеры */
 .container {
     display: flex;
     flex-direction: column;
@@ -15,24 +15,24 @@ body {
     width: 100%;
 }
 
-/* ГЛАВНЫЙ БЛОК: Русский текст */
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Русский текст: Равномерно заполняет ширину, смайлики слева */
 .ru-text {
-    /* Равномерное заполнение всей ширины карточки */
     text-align: justify !important; 
-    
-    /* Принудительно слева направо для русского языка */
     direction: ltr !important;
-    
-    /* МАГИЯ: заставляет знаки препинания и смайлики стоять 
-       в конце строки ПРАВИЛЬНО, игнорируя глобальный RTL */
     unicode-bidi: plaintext !important; 
-    
     display: block;
     width: 100%;
     box-sizing: border-box;
 }
 
-/* ЗАГОЛОВОК: Белый и всегда по центру */
+/* Заголовок и подзаголовок */
 h1.ru-text {
     color: #ffffff !important;
     text-align: center !important;
@@ -40,7 +40,13 @@ h1.ru-text {
     font-size: 24px;
 }
 
-/* БЕЛЫЕ КАРТОЧКИ: Белый фон, черный текст */
+header h3 {
+    margin: 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Карточки */
 .card-white {
     background-color: #ffffff !important;
     color: #000000 !important;
@@ -51,7 +57,6 @@ h1.ru-text {
     box-sizing: border-box;
 }
 
-/* КРАСНЫЕ КАРТОЧКИ: Красный фон, белый текст */
 .card-red {
     background-color: #8B0000 !important;
     color: #ffffff !important;
@@ -62,7 +67,7 @@ h1.ru-text {
     box-sizing: border-box;
 }
 
-/* Навигация и кнопки */
+/* Меню */
 .menu {
     display: flex;
     justify-content: center;
@@ -79,7 +84,7 @@ h1.ru-text {
     font-weight: bold;
 }
 
-/* Картинки */
+/* Изображения */
 img {
     max-width: 90%;
     height: auto;
