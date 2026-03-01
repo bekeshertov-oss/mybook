@@ -2,14 +2,10 @@
 <html lang="ru" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BraslavSea</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="manifest" href="./manifest.json">
-    <link rel="apple-touch-icon" href="./icon-192.png">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 <body>
 
@@ -17,17 +13,15 @@
 
         <header class="card-red ru-text">
             <h3 style="margin: 0; text-align: center;">Добро пожаловать в Braslav Sea</h3>
-            <p style="text-align: center; margin-top: 5px;">Теперь вы всегда можете следить за новостями</p>
         </header>
 
         <nav class="menu">
             <a href="./index.html" class="menu-btn">Home</a>
             <a href="./tema.html" class="menu-btn">Темы</a>
-            <a href="#" class="menu-btn">Контакты</a>
         </nav>
 
         <main style="width: 100%; display: flex; flex-direction: column; align-items: center;">
-          
+            
             <h1 class="ru-text">Немного о страхе</h1>
             
             <img src="./1.png" alt="BraslavSea">
@@ -40,24 +34,15 @@
             </div>
 
             <div class="card-red">
-                דַּע כִּי יֵשׁ יִרְאוֹת נְפוּלוֹת וְכָל הַיִּסּוּרִים וְהַדִּינִים שֶׁיֵּשׁ לָאָדָם כֻּלָּם הֵם מֵהַיִּרְאוֹת הַנְּפוּלוֹת שֶׁנָּפְלוּ לְתוֹך זֶה הַדָּבָר שֶׁהוּא מִתְפַּחֵד וְיֵשׁ לוֹ יִסּוּרִים מִמֶּנּוּ
-            </div>
-
-            <div class="card-white ru-text">
-                <p><b>Интересная заметка о планетах</b><br>
-                В 153 главе приводится такое сравнение: "ученик и учитель, это как луна и солнце". 🙂 <br>
-                <a href="https://t.me/braslavsea" target="_blank">https://t.me/braslavsea</a></p>
+                דַּע כִּי יֵשׁ יִרְאוֹת נְפוּלוֹת...
             </div>
 
         </main>
-
     </div>
 
     <script>
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./sw.js', { scope: '/mybook/' })
-          .then(reg => console.log('SW registered!', reg))
-          .catch(err => console.log('SW error:', err));
+        navigator.serviceWorker.register('./sw.js', { scope: '/mybook/' });
       }
     </script>
 
