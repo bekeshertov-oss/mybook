@@ -1,36 +1,33 @@
-/* Черный фон сайта, как на ваших скриншотах */
 body {
-    background-color: #000000; 
+    background-color: #000000 !important;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    color: #ffffff; /* Весь текст по умолчанию белый */
 }
 
-/* Исправление выравнивания для русского языка */
+/* Это правило прижмет русский текст влево и вернет смайлики на место */
 .ru-text {
-    direction: ltr !important;    /* Слева направо */
-    text-align: left !important;   /* Прижать к левому краю */
-    unicode-bidi: isolate;         /* Чтобы знаки препинания не прыгали */
+    direction: ltr !important;
+    text-align: left !important;
+    unicode-bidi: isolate !important;
     display: block;
 }
 
-/* Заголовки (теперь они БЕЛЫЕ и их видно) */
-h1, h2, h3 {
+/* Делаем заголовок БЕЛЫМ */
+h1 {
     color: #ffffff !important;
+    text-align: center;
 }
 
-/* Красные карточки */
 .card-red {
     background-color: #8B0000;
-    color: #ffffff;
+    color: white;
     padding: 15px;
     border-radius: 10px;
     margin: 10px auto;
     width: 90%;
 }
 
-/* Белые карточки (текст внутри них черный) */
 .card-white {
     background-color: #ffffff;
     color: #000000 !important;
@@ -40,7 +37,6 @@ h1, h2, h3 {
     width: 90%;
 }
 
-/* Синие кнопки меню */
 .menu {
     display: flex;
     justify-content: center;
@@ -50,7 +46,7 @@ h1, h2, h3 {
 
 .menu-btn {
     background-color: #007bff;
-    color: #ffffff !important;
+    color: white !important;
     padding: 10px 15px;
     text-decoration: none;
     border-radius: 8px;
