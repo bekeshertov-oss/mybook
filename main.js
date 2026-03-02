@@ -2,17 +2,31 @@ import { getMessaging, getToken, onMessage } from "firebase/messaging";
 
 const messaging = getMessaging(app);
 
-// Запрос разрешения на пуши
-Notification.requestPermission().then(permission => {
-  if (permission === 'granted') {
-    getToken(messaging, { vapidKey: 'ТВОЙ_PUBLIC_VAPID_KEY' })
-      .then(token => {
-        console.log('FCM токен:', token);
-        // Здесь нужно отправить токен на сервер или в Firebase, чтобы подписать на topic "all"
-      })
-      .catch(err => console.log('Ошибка получения токена:', err));
-  }
-});
+// Проверяем разрешение на уведомления
+if (Notification.permission === 'default') {
+  Notification.requestPermission().then(permission => {
+    if (permission === 'granted') {
+      console.log('Пуши разрешены');
+      getFCMToken();
+    } else {
+      console.log('Пуши отклонены');
+    }
+  });
+} else if (Notification.permission === 'granted') {
+  getFCMToken();
+} else {
+  console.log('Пуши заблокированы пользователем');
+}
+
+// Функция получения FCM токена
+function getFCMToken() {
+  getToken(messaging, { vapidKey: 'ТВОЙ_PUBLIC_VAPID_KEY' })
+    .then(token => {
+      console.log('FCM токен:', token);
+      // TODO: Отправить токен на сервер / подписать на topic "all"
+    })
+    .catch(err => console.log('Ошибка получения токена:', err));
+}
 
 // Регистрация Service Worker
 if ('serviceWorker' in navigator) {
@@ -21,7 +35,7 @@ if ('serviceWorker' in navigator) {
     .catch(err => console.log('Ошибка регистрации SW:', err));
 }
 
-// Обработка пушей, когда PWA открыта
+// Обработка пушей в foreground
 onMessage(messaging, payload => {
   console.log('Получено сообщение в foreground:', payload);
   if (payload.notification) {
@@ -36,16 +50,3 @@ onMessage(messaging, payload => {
     navigator.setAppBadge(1);
   }
 });
-
-// Проверяем текущее разрешение
-if (Notification.permission === 'default') {
-  Notification.requestPermission().then(permission => {
-    if (permission === 'granted') {
-      console.log('Пуши разрешены');
-    } else {
-      console.log('Пуши отклонены');
-    }
-  });
-} else {
-  console.log('Разрешение уже установлено:', Notification.permission);
-}
