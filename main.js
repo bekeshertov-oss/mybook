@@ -36,3 +36,16 @@ onMessage(messaging, payload => {
     navigator.setAppBadge(1);
   }
 });
+
+// Проверяем текущее разрешение
+if (Notification.permission === 'default') {
+  Notification.requestPermission().then(permission => {
+    if (permission === 'granted') {
+      console.log('Пуши разрешены');
+    } else {
+      console.log('Пуши отклонены');
+    }
+  });
+} else {
+  console.log('Разрешение уже установлено:', Notification.permission);
+}
