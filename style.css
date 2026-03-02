@@ -1,3 +1,4 @@
+/* === Основной CSS (твой) === */
 body {
     background-color: #000000;
     margin: 0;
@@ -25,13 +26,13 @@ main {
 /* Русский текст */
 .ru-text {
     text-align: justify;
-    direction: ltr;          /* можно оставить, если нужны смайлики слева */
+    direction: ltr;
     unicode-bidi: plaintext;
     display: block;
     width: 100%;
-    max-width: 400px;        /* ограничиваем ширину текста */
+    max-width: 400px;
     box-sizing: border-box;
-    word-wrap: break-word;    /* предотвращает уход слов за границы */
+    word-wrap: break-word;
 }
 
 /* Заголовки */
@@ -56,7 +57,7 @@ header h3 {
     border-radius: 10px;
     margin: 10px auto;
     width: 90%;
-    max-width: 400px;   /* ограничиваем ширину карточки */
+    max-width: 400px;
     box-sizing: border-box;
 }
 
@@ -67,7 +68,7 @@ header h3 {
     border-radius: 10px;
     margin: 10px auto;
     width: 90%;
-    max-width: 400px;   /* ограничиваем ширину */
+    max-width: 400px;
     box-sizing: border-box;
 }
 
@@ -90,9 +91,9 @@ header h3 {
 
 /* Изображения */
 img {
-    max-width: 380px;   /* ограничиваем ширину картинки */
-    width: 100%;        /* подстраиваем под контейнер */
-    height: auto;       /* сохраняем пропорции */
+    max-width: 380px;
+    width: 100%;
+    height: auto;
     border-radius: 10px;
     margin: 10px 0;
 }
@@ -106,4 +107,64 @@ img {
     img {
         max-width: 100%;
     }
+}
+
+/* === Новый стиль для формы почты === */
+.contact-card {
+    background-color: #1a1a1a; /* тёмная карточка, чтобы сочеталась с фоном */
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    margin: 10px auto;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.contact-card label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.contact-card input,
+.contact-card textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #555555;
+    background-color: #222222;
+    color: #ffffff;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.contact-card textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact-card .submit-btn {
+    margin-top: 15px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background-color: #b30000;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-card .submit-btn:hover {
+    background-color: #e60000;
+}
+
+.contact-card .form-result {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #00ff00; /* зелёный для успеха */
 }
