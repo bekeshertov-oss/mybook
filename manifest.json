@@ -2,6 +2,7 @@
   "name": "BraslavSea",
   "short_name": "BraslavSea",
   "start_url": "/mybook/index.html",
+  "scope": "/mybook/",
   "display": "standalone",
   "background_color": "#FDF5E6",
   "theme_color": "#FDF5E6",
@@ -9,14 +10,13 @@
     {
       "src": "/mybook/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
+      "type": "image/png"
     },
     {
       "src": "/mybook/icon.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     }
   ]
 }
