@@ -1,33 +1,17 @@
 const express = require('express');
-const admin = require('firebase-admin');
-const bodyParser = require('body-parser');
-
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json()); // Обязательно для чтения данных от GitHub
 
-// Инициализация Firebase Admin
-admin.initializeApp({
-  credential: admin.credential.cert({
-    projectId: 'rednek-7eb9b',
-    clientEmail: 'firebase-adminsdk-xxxxx@rednek-7eb9b.iam.gserviceaccount.com',
-    privateKey: '-----BEGIN PRIVATE KEY-----\nВАШ_КЛЮЧ\n-----END PRIVATE KEY-----\n'
-  })
+// Этот маршрут ДОЛЖЕН быть в коде
+app.post('/github-webhook', (req, res) => {
+    console.log('Сигнал от GitHub получен!');
+    
+    // Здесь будет логика отправки пуша в Firebase
+    
+    res.status(200).send('OK'); // Отправляем Гитхабу статус 200, чтобы не было ошибки 502
 });
 
-// Endpoint для подписки токена на topic "all"
-app.post('/subscribe', async (req, res) => {
-  try {
-    const { token } = req.body;
-    if (!token) return res.status(400).send('Нет токена');
-
-    await admin.messaging().subscribeToTopic(token, 'all');
-    res.send('Успешно подписан на topic "all"');
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Ошибка');
-  }
-});
-
-// Запуск сервера
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Сервер работает на порту ${PORT}`);
+});
