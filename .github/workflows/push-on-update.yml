@@ -22,7 +22,7 @@ jobs:
       - name: Get Access Token
         id: auth
         run: |
-          sudo apt-get install -y google-cloud-sdk
+          sudo apt-get install -y google-cloud-cli
           gcloud auth activate-service-account --key-file=serviceAccount.json
           ACCESS_TOKEN=$(gcloud auth print-access-token)
           echo "ACCESS_TOKEN=$ACCESS_TOKEN" >> $GITHUB_ENV
