@@ -8,16 +8,36 @@ on:
 jobs:
   send-push:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Send Push Notification
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Write Service Account File
+        run: echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}' > serviceAccount.json
+
+      - name: Install jq
+        run: sudo apt-get install jq
+
+      - name: Get Access Token
+        id: auth
         run: |
-          curl -X POST https://fcm.googleapis.com/fcm/send \
-          -H "Authorization: key=${{ secrets.FCM_SERVER_KEY }}" \
+          sudo apt-get install -y google-cloud-sdk
+          gcloud auth activate-service-account --key-file=serviceAccount.json
+          ACCESS_TOKEN=$(gcloud auth print-access-token)
+          echo "ACCESS_TOKEN=$ACCESS_TOKEN" >> $GITHUB_ENV
+
+      - name: Send Push
+        run: |
+          curl -X POST https://fcm.googleapis.com/v1/projects/rednek-7eb9b/messages:send \
+          -H "Authorization: Bearer $ACCESS_TOKEN" \
           -H "Content-Type: application/json" \
           -d '{
-            "to": "/topics/all",
-            "notification": {
-              "title": "Сайт обновлён",
-              "body": "Появился новый текст"
+            "message": {
+              "topic": "all",
+              "notification": {
+                "title": "Сайт обновлён",
+                "body": "Добавлен новый контент"
+              }
             }
           }'
