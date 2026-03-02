@@ -2,7 +2,7 @@ import { getMessaging, getToken, onMessage } from "firebase/messaging";
 
 const messaging = getMessaging(app);
 
-// Проверяем разрешение на уведомления
+// Проверка разрешения на уведомления
 if (Notification.permission === 'default') {
   Notification.requestPermission().then(permission => {
     if (permission === 'granted') {
@@ -23,8 +23,7 @@ function subscribeUser() {
   getToken(messaging, { vapidKey: 'ТВОЙ_PUBLIC_VAPID_KEY' })
     .then(token => {
       console.log('FCM токен:', token);
-      // 🔹 Отправляем токен на сервер
-      // Например через fetch:
+      // Отправляем токен на сервер для подписки на topic "all"
       fetch('/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
