@@ -143,8 +143,8 @@ img {
 }
 
 .contact-card textarea {
+    min-height: 200px;  /* стало выше по умолчанию */
     resize: vertical;
-    min-height: 100px;
 }
 
 .contact-card .submit-btn {
