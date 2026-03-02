@@ -144,7 +144,8 @@ img {
 }
 
 .contact-card textarea {
-    min-height: 200px;  /* стало выше по умолчанию */
+    min-height: 300px;  /* стало выше по умолчанию */
+    min-width: 300px;
     resize: vertical;
 }
 
