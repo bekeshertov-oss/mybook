@@ -7,23 +7,29 @@ if (Notification.permission === 'default') {
   Notification.requestPermission().then(permission => {
     if (permission === 'granted') {
       console.log('Пуши разрешены');
-      getFCMToken();
+      subscribeUser();
     } else {
       console.log('Пуши отклонены');
     }
   });
 } else if (Notification.permission === 'granted') {
-  getFCMToken();
+  subscribeUser();
 } else {
   console.log('Пуши заблокированы пользователем');
 }
 
-// Функция получения FCM токена
-function getFCMToken() {
+// Функция подписки пользователя на topic "all"
+function subscribeUser() {
   getToken(messaging, { vapidKey: 'ТВОЙ_PUBLIC_VAPID_KEY' })
     .then(token => {
       console.log('FCM токен:', token);
-      // TODO: Отправить токен на сервер / подписать на topic "all"
+      // 🔹 Отправляем токен на сервер
+      // Например через fetch:
+      fetch('/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token })
+      }).catch(err => console.log('Ошибка отправки токена на сервер:', err));
     })
     .catch(err => console.log('Ошибка получения токена:', err));
 }
@@ -45,7 +51,7 @@ onMessage(messaging, payload => {
     });
   }
 
-  // Ставим красную точку
+  // Ставим красную точку на иконке
   if ('setAppBadge' in navigator) {
     navigator.setAppBadge(1);
   }
